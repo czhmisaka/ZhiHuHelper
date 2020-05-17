@@ -26,6 +26,7 @@ class zhihuHelper():
             "Accept-Language": "zh-CN,zh;q=0.8"
         }
     def __SaveAsText(self,data):
+        self.log.log('保存路径为：'+self.path+'History.txt')
         try:
             with open(self.path+'History.txt','w',encoding='utf-8') as f:
                 for x in data:
@@ -34,6 +35,7 @@ class zhihuHelper():
             self.log.err('保存失败\n'+str(data))
 
     def __SaveAsjson(self,data):
+        self.log.log('保存路径为：'+self.path+'History.json')
         try:
             with open(self.path+'History.json','w') as f:
                 json.dump(data,f)
